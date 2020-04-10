@@ -1,0 +1,1 @@
+has_many through :w.e dependant: :destroy                                
