@@ -1,0 +1,2 @@
+module CastTagsHelper
+end
