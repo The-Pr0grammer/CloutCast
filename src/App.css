@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar-right {
+  margin-right: 0px !important;
+}
+.log {
+  margin: 5px 20px 0 0;
+}
+.videos {
+  border: 1px solid red;
+  height: 400px;
+}
+

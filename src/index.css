@@ -1,13 +1,60 @@
+@import url(//db.onlinewebfonts.com/c/b21462c2d71a33ca57874c16fc045c5e?family=Dimensions);
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: "Dimensions";
+  src: url("//db.onlinewebfonts.com/t/b21462c2d71a33ca57874c16fc045c5e.eot");
+  src: url("//db.onlinewebfonts.com/t/b21462c2d71a33ca57874c16fc045c5e.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/b21462c2d71a33ca57874c16fc045c5e.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/b21462c2d71a33ca57874c16fc045c5e.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/b21462c2d71a33ca57874c16fc045c5e.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/b21462c2d71a33ca57874c16fc045c5e.svg#Dimensions")
+      format("svg");
+}
+
+img {
+  height: 350px;
+  width: 100%;
+}
+
+.yo {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  display: block;
+  position: absolute;
+  top: 60px;
+  width: 28.7vw;
+}
+
+.text {
+  font-size: 16px;
+}
+
+.cat-div {
+  width: 1px;
+  padding: 0px 0px 11px 0px;
+  margin: 0px 0px 0px 0px;
+  border: 0;
+}
+
+.cat-list {
+  max-height: 200px;
 }

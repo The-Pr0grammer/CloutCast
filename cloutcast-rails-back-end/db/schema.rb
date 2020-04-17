@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_015903) do
+ActiveRecord::Schema.define(version: 2020_04_16_162002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cast_categories", force: :cascade do |t|
+    t.integer "cast_id"
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "cast_tags", force: :cascade do |t|
     t.integer "cast_id"
@@ -26,18 +33,24 @@ ActiveRecord::Schema.define(version: 2020_04_13_015903) do
     t.string "description"
     t.string "image_url"
     t.string "video_url"
-    t.string "category"
     t.string "social_media"
     t.integer "clout"
     t.integer "views"
     t.integer "user_id"
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "profile_id"
+    t.integer "user_id"
     t.integer "cast_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,0 +1,2 @@
+module CastCategoriesHelper
+end

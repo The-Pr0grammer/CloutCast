@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cast_categories
+  resources :categories
   resources :cast_tags
   resources :tags
   resources :saved_casts
