@@ -4,7 +4,6 @@ import {
   Form,
   Segment,
   TextArea,
-  Message,
   Dropdown,
 } from "semantic-ui-react";
 
@@ -43,9 +42,8 @@ export default class CastForm extends React.Component {
     );
 
     catId = cat && cat.id;
-
-    let data = {};
     console.log("test");
+
     fetch("http://localhost:3000/casts", {
       method: "POST",
       headers: {
@@ -60,10 +58,15 @@ export default class CastForm extends React.Component {
       }),
     })
       .then((resp) => resp.json())
-      .then((resp) => this.props.handleAdd(resp));
+      .then((resp) => {
+        this.props.handleAdd(resp);
+      });
+
+    this.props.clearForm();
   };
 
   render() {
+    const { category, imageUrl, description, tags } = this.state;
     return (
       <div>
         <Segment
@@ -72,8 +75,9 @@ export default class CastForm extends React.Component {
             height: "240px",
             width: "40vw",
             display: "fixed",
-            left: "26.6%",
+            left: "28.2%",
             padding: "30px 0px 0px 0px",
+            display: "relative",
           }}
         >
           <div className="cat-div">
@@ -87,12 +91,11 @@ export default class CastForm extends React.Component {
               value={this.state.category}
               style={{
                 height: "41px",
-                width: "19vw",
+                width: "18.8vw",
                 display: "relative",
               }}
             />
           </div>
-
           <Form
             inverted
             style={{ width: "40vw", height: "4vh" }}
@@ -123,7 +126,11 @@ export default class CastForm extends React.Component {
               </div>
               <div className="description-box">
                 <label
-                  style={{ position: "relative", right: "19.8%", bottom: "0.5%" }}
+                  style={{
+                    position: "relative",
+                    right: "19.8%",
+                    bottom: "0.5%",
+                  }}
                 >
                   Description
                 </label>
@@ -135,7 +142,6 @@ export default class CastForm extends React.Component {
                   }}
                   id="cast-description"
                   control={TextArea}
-                  react-textarea-autosize
                   width={7}
                   placeholder="What are you promoting?"
                   name="description"
@@ -148,13 +154,9 @@ export default class CastForm extends React.Component {
               label="I agree to the Terms and Conditions"
               style={{ top: "12px", left: "467px" }}
             /> */}
-            <Message
-              success
-              header="Your Cast was Posted"
-              content="Head over to the explore page to check it out"
-            />
             <Button
               type="submit"
+              disabled={!category || !description || !imageUrl || !tags}
               style={{ position: "relative", top: "69px", float: "right" }}
             >
               Submit

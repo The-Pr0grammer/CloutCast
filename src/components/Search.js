@@ -50,8 +50,8 @@ export default class SearchExampleStandard extends Component {
         </div>
         <Grid>
           <Grid.Column width={"10"} heigh={"10"}>
-            <Search className="search-box"            
-              style={{}}
+            <Search
+              className="search-box"
               input={{ icon: "search", iconPosition: "left" }}
               loading={isLoading}
               placeholder="     search by cast tag"

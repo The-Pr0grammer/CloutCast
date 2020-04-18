@@ -84,16 +84,23 @@ img {
 .chosen-cat {
   color: blue;
   display: block;
+  position: relative;
   height: 20px;
-  width: 94%;
-  text-align: center;
+  width: 24%;
   font-family: dimensions;
   font-size: 82px;
   letter-spacing: 10px;
+  text-align: center;
+  left: 36.9%;
 }
 
 .search-box {
   position: relative;
-  left: 67.5%;
+  left: 67.8%;
   top: 150%;
+}
+
+.upper-site-center {
+  width: 103.6%;
+  left: 500%;
 }
