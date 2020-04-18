@@ -46,26 +46,12 @@ export default class SearchExampleStandard extends Component {
     return (
       <div>
         <div style={{ height: "10vh" }}>
-          <p
-            style={{
-              color: "blue",
-              display: "block",
-              height: "50px",
-              width: "94%",
-              background: "transparent url(images/logo.jpg) no-repeat 0 0",
-              textAlign: "center",
-              fontFamily: "dimensions",
-              fontSize: "82px",
-              letterSpacing: "10px",
-            }}
-          >
-            {this.state.chosenCat}
-          </p>
+          <p className="chosen-cat">{this.state.chosenCat}</p>
         </div>
         <Grid>
           <Grid.Column width={"10"} heigh={"10"}>
-            <Search
-              style={{ position: "relative", left: "67.5%", top: "150%" }}
+            <Search className="search-box"            
+              style={{}}
               input={{ icon: "search", iconPosition: "left" }}
               loading={isLoading}
               placeholder="     search by cast tag"

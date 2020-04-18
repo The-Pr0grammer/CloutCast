@@ -35,26 +35,65 @@ img {
   width: 100%;
 }
 
-.yo {
+.image-div {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   display: block;
   position: absolute;
-  top: 60px;
-  width: 28.7vw;
+  top: -8px;
+  width: 44.8vw;
+  height: 10vh;
+  float: left;
+}
+
+.tags-input {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  display: block;
+  position: absolute;
+  top: 65px;
+  width: 39.4vw;
+  height: 12px;
+}
+
+.description-box {
+  position: absolute;
+  display: block;
+  bottom: 2vh;
+  width: 39vw;
+  left: 28.7vw;
 }
 
 .text {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .cat-div {
   width: 1px;
+  position: relative;
   padding: 0px 0px 11px 0px;
   margin: 0px 0px 0px 0px;
   border: 0;
+  bottom: 7.4px;
 }
 
 .cat-list {
   max-height: 200px;
+}
+
+.chosen-cat {
+  color: blue;
+  display: block;
+  height: 20px;
+  width: 94%;
+  text-align: center;
+  font-family: dimensions;
+  font-size: 82px;
+  letter-spacing: 10px;
+}
+
+.search-box {
+  position: relative;
+  left: 67.5%;
+  top: 150%;
 }

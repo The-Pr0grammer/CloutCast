@@ -18,6 +18,11 @@ class App extends Component {
     this.setState({ casts: castsData, categories: categoriesData });
   }
 
+  handleAdd = (newCast) => {
+    console.log(newCast);
+    this.setState({ casts: [...this.state.casts, newCast] });
+  };
+
   render() {
     return (
       <div
@@ -29,9 +34,11 @@ class App extends Component {
         }}
       >
         <Header />
-        <CastForm categories={this.state.categories} />
+        <CastForm
+          categories={this.state.categories}
+          handleAdd={this.handleAdd}
+        />
         <Search categories={this.state.categories} />
-
         <CastContainer casts={this.state.casts} />
       </div>
     );

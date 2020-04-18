@@ -59,8 +59,8 @@ export default class CastForm extends React.Component {
         description: this.state.description,
       }),
     })
-      .then((res) => res.json())
-      .then(console.log("fetch comp"));
+      .then((resp) => resp.json())
+      .then((resp) => this.props.handleAdd(resp));
   };
 
   render() {
@@ -69,21 +69,24 @@ export default class CastForm extends React.Component {
         <Segment
           inverted
           style={{
-            height: "30vh",
+            height: "240px",
             width: "40vw",
             display: "fixed",
-            left: "26.9%",
+            left: "26.6%",
+            padding: "30px 0px 0px 0px",
           }}
         >
           <div className="cat-div">
-            <Dropdown
+            <Form.Dropdown
+              label="Categories"
               text={this.state.category}
               selection
+              placeholder="Select a category"
               options={this.mapCats()}
               name="category"
               value={this.state.category}
               style={{
-                height: "20px",
+                height: "41px",
                 width: "19vw",
                 display: "relative",
               }}
@@ -92,50 +95,59 @@ export default class CastForm extends React.Component {
 
           <Form
             inverted
-            style={{ width: "40vw", height: "45vh" }}
+            style={{ width: "40vw", height: "4vh" }}
             onSubmit={this.handleSubmit}
           >
             <Form.Group widths="equal">
-              <div className="yo">
+              <div className="tags-input">
                 <Form.Input
                   fluid
                   label="Tags"
-                  width={11}
+                  width={8}
                   placeholder="Seperate your tags with commas"
                   name="tags"
                   value={this.state.tags}
                   onChange={(event) => this.handleChange(event)}
                 />
               </div>
-              <Form.Input
-                fluid
-                label="Image URL"
-                width={7}
-                placeholder="Enter a URL. Gifs are supported"
-                name="imageUrl"
-                value={this.state.imageUrl}
-                onChange={(event) => this.handleChange(event)}
-              />
-              <Form.Field
-                id="cast-description"
-                control={TextArea}
-                label="Description"
-                width={7}
-                placeholder="What are you promoting?"
-                style={{
-                  position: "absolute",
-                  bottom: "41.8vh",
-                  width: "411px",
-                }}
-                name="description"
-                value={this.statedescription}
-                onChange={(event) => this.handleChange(event)}
-              />
+              <div className="image-div">
+                <Form.Input
+                  fluid
+                  label="Image URL"
+                  width={7}
+                  placeholder="Enter a URL. Gifs are supported"
+                  name="imageUrl"
+                  value={this.state.imageUrl}
+                  onChange={(event) => this.handleChange(event)}
+                />
+              </div>
+              <div className="description-box">
+                <label
+                  style={{ position: "relative", right: "19.8%", bottom: "0.5%" }}
+                >
+                  Description
+                </label>
+                <Form.Field
+                  style={{
+                    position: "relative",
+                    width: "18.8vw",
+                    right: "50%",
+                  }}
+                  id="cast-description"
+                  control={TextArea}
+                  react-textarea-autosize
+                  width={7}
+                  placeholder="What are you promoting?"
+                  name="description"
+                  value={this.statedescription}
+                  onChange={(event) => this.handleChange(event)}
+                />
+              </div>
             </Form.Group>
-            <Form.Checkbox
+            {/* <Form.Checkbox
               label="I agree to the Terms and Conditions"
-              style={{ top: "10px", left: "427px" }}
-            />
+              style={{ top: "12px", left: "467px" }}
+            /> */}
             <Message
               success
               header="Your Cast was Posted"
@@ -143,7 +155,7 @@ export default class CastForm extends React.Component {
             />
             <Button
               type="submit"
-              style={{ position: "relative", bottom: "30px", float: "right" }}
+              style={{ position: "relative", top: "69px", float: "right" }}
             >
               Submit
             </Button>
