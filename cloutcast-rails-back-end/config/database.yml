@@ -24,10 +24,10 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: clout-cast-_development
+  database: clout-cast-development
   pool: 5
   host: localhost
-  username: clout-cast
+  username: anthonyholder
   password: ajnchick
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

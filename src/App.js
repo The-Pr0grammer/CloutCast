@@ -4,6 +4,7 @@ import CastContainer from "./components/CastContainer";
 import CastForm from "./components/CastForm";
 import Search from "./components/Search";
 import { Message } from "semantic-ui-react";
+import ScrollingWrapper from "./components/ScrollingWrapper.js";
 class App extends Component {
   state = {
     casts: [],
@@ -81,8 +82,10 @@ class App extends Component {
             />
           )}
         </div>
-          <Search categories={this.state.categories} />
-        <CastContainer casts={this.state.casts} />
+        <Search categories={this.state.categories} />
+        <ScrollingWrapper>
+          <CastContainer casts={this.state.casts} />
+        </ScrollingWrapper>
       </div>
     );
   }
