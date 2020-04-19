@@ -10,6 +10,7 @@ class App extends Component {
     categories: [],
     formToggle: false,
     formSuccess: true,
+    successTimer: 0,
   };
 
   async componentDidMount() {
@@ -21,7 +22,6 @@ class App extends Component {
   }
 
   handleAdd = (newCast) => {
-    console.log(newCast);
     this.setState({ casts: [...this.state.casts, newCast] });
   };
 
@@ -31,10 +31,24 @@ class App extends Component {
 
   clearForm = () => {
     this.setState({ formToggle: false, formSuccess: true });
+    this.successTimer();
+  };
+
+  successTimer = () => {
+    var timer = setInterval(() => {
+      this.setState({ successTimer: this.state.successTimer + 1 });
+
+      {
+        if (this.state.successTimer > 4) {
+          this.setState({ successTimer: 0 });
+          clearInterval(timer);
+        }
+      }
+    }, 1000);
   };
 
   render() {
-    console.log(this.state.success);
+    console.log(this.state.successTimer);
     return (
       <div
         style={{
@@ -46,7 +60,7 @@ class App extends Component {
       >
         <div className="upper-site-center">
           <Header handleToggle={this.castFormToggle} />
-          {this.state.formSuccess && (
+          {this.state.successTimer > 0 && (
             <div
               className="ui compact message"
               style={{ position: "relative", left: "36.2%" }}
@@ -66,8 +80,8 @@ class App extends Component {
               clearForm={this.clearForm}
             />
           )}
-          <Search categories={this.state.categories} />
         </div>
+          <Search categories={this.state.categories} />
         <CastContainer casts={this.state.casts} />
       </div>
     );

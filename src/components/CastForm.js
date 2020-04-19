@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Form,
-  Segment,
-  TextArea,
-  Dropdown,
-} from "semantic-ui-react";
+import { Button, Form, Segment, TextArea, Dropdown } from "semantic-ui-react";
 
 export default class CastForm extends React.Component {
   state = {
@@ -42,7 +36,6 @@ export default class CastForm extends React.Component {
     );
 
     catId = cat && cat.id;
-    console.log("test");
 
     fetch("http://localhost:3000/casts", {
       method: "POST",
