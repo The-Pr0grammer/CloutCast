@@ -4,7 +4,7 @@ import CastContainer from "./components/CastContainer";
 import CastForm from "./components/CastForm";
 import Search from "./components/Search";
 import { Message } from "semantic-ui-react";
-import ScrollingWrapper from "./components/ScrollingWrapper.js";
+import ScrollToTop from "./components/ScrollToTop.js";
 class App extends Component {
   state = {
     casts: [],
@@ -40,12 +40,12 @@ class App extends Component {
       this.setState({ successTimer: this.state.successTimer + 1 });
 
       {
-        if (this.state.successTimer > 4) {
+        if (this.state.successTimer > 60) {
           this.setState({ successTimer: 0 });
           clearInterval(timer);
         }
       }
-    }, 1000);
+    }, 100);
   };
 
   render() {
@@ -64,7 +64,7 @@ class App extends Component {
           {this.state.successTimer > 0 && (
             <div
               className="ui compact message"
-              style={{ position: "relative", left: "36.2%" }}
+              style={{ position: "relative", left: "37.8%" }}
             >
               <Message
                 visible
@@ -83,9 +83,8 @@ class App extends Component {
           )}
         </div>
         <Search categories={this.state.categories} />
-        <ScrollingWrapper>
-          <CastContainer casts={this.state.casts} />
-        </ScrollingWrapper>
+        <CastContainer casts={this.state.casts} />
+        <ScrollToTop />
       </div>
     );
   }

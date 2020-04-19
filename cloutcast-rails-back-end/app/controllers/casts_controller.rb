@@ -1,10 +1,16 @@
+
 class CastsController < ApplicationController
     
     def index
         @casts = Cast.all
         render json: @casts
     end
-    
+
+    def show
+        cast = Cast.find(params[:id])
+        render json: CastSerializer.new(cast).serializable_hash
+    end
+
     def create
         @cast = Cast.create(cast_params)
         

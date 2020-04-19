@@ -20,7 +20,7 @@ let colors = [
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
 const Cast = (props) => (
   <Card color={randomColor}>
-    {console.log(props.cast.user)} <img src={props.cast.image_url} />
+    <img src={props.cast.image_url} />
     <Card.Content>
       <Card.Header content={"Jake Smithhhhh"} />
       <Card.Meta content={"Music"} />
