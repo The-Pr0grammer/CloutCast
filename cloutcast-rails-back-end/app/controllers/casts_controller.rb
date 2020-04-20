@@ -7,8 +7,9 @@ class CastsController < ApplicationController
     end
 
     def show
-        cast = Cast.find(params[:id])
-        render json: CastSerializer.new(cast).serializable_hash
+        @cast = Cast.find_by(id:params[:id])
+        options = {include: [:category, :user]}
+        render json: CastSerializer.new(@cast,options).serialized_json
     end
 
     def create

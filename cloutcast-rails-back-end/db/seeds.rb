@@ -14,7 +14,6 @@
 
 #   Character.create!(name: 'Luke', movie: movies.first)
 
-
 User.create!(name:"Jake",city:"LA",zip:"90210")
 Category.create!(name:"Music")
 Category.create!(name:"Food")
@@ -47,7 +46,6 @@ Category.create!(name:"Websites")
 Category.create!(name:"Design")
 Category.create!(name:"Fitness")
 
-
 Cast.create!(description:"Jake is a drummer living in New York.",image_url:"https://media0.giphy.com/media/ndwlAkpTgKjUQ/source.gif",user_id:1,category_id:2)
 Cast.create!(description:"Jake is a drummer living in New York.",image_url:"https://25.media.tumblr.com/tumblr_m6khmmUa1N1rubttko1_r1_500.gif",user_id:1,category_id:2)
 Cast.create!(description:"Jake is a drummer living in New York.",image_url:"https://2.bp.blogspot.com/-vDhZmNgiy2g/T9KYDS6pkII/AAAAAAAAfQo/AsMABxxMICU/s400/around-the-world_65.gif
@@ -62,4 +60,6 @@ Cast.create!(description:"Jake is a drummer living in New York.",image_url:"http
 Cast.create!(description:"What a week right? Happy Friday.",image_url:"https://media3.giphy.com/media/tsX3YMWYzDPjAARfeg/giphy.gif?cid=ecf05e473b28450e6458d6a97b2be157bec0c5bc7834cb48&rid=giphy.gif",user_id:1,category_id:7)
 Cast.create!(description:"That Weezy Funeral is 🔥 Wayne is the 🐐go check it out on Apple Music and Spotify",image_url:"https://imageproxy.themaven.net/https%3A%2F%2Fimages.saymedia-content.com%2F.image%2FMTcwMTI5OTc3MzIzMzAwMTI2%2Fgiphy.gif",user_id:1,category_id:2)
 Cast.create!(description:"Professional shots. Best prices in NYC 📸",image_url:"https://media.giphy.com/media/6xupaFhVTMg4U/giphy.gif",user_id:1,category_id:2)
+Cast.create!(description:"Visit the NY Museum of Art 🎨\nLimited Time Offer! \nEntry for 1: $25\nEntry for 2: $40  ",image_url: "https://media.giphy.com/media/26ybvc5GgyFUKLsJ2/giphy.gif",user_id: 1,category_id: 4)
+Cast.create!(description:"This is my favorite food EVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!",image_url: "https://media3.giphy.com/media/RtgvNv6tk3jd6/source.gif",user_id: 1,category_id: 2)
 

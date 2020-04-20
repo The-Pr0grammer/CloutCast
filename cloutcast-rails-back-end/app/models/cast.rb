@@ -3,5 +3,5 @@ class Cast < ApplicationRecord
     has_many :saved_cast
     has_many :comments
     has_many :cast_tags, through: :tags
-    has_one :category
+    belongs_to :category
 end
