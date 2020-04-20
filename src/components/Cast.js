@@ -18,15 +18,31 @@ let colors = [
 ];
 
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
-const Cast = (props) => (
-  <Card color={randomColor}>
-    <img src={props.cast.image_url} />
-    <Card.Content>
-      <Card.Header content={"Jake Smithhhhh"} />
-      <Card.Meta content={"Music"} />
-      <Card.Description content={props.cast.description} />
-    </Card.Content>
-  </Card>
-);
+export default class Cast extends React.Component {
+  state = {
+    user: "",
+    category: "",
+  };
 
-export default Cast;
+  componentDidMount() {
+    fetch(`http://localhost:3000/casts/${this.props.cast.id}`)
+      .then((resp) => resp.json())
+      .then((cast) => {
+        const meta = cast.included.map((attr) => attr.attributes.name);
+        return this.setState({ user: meta[1], category: meta[0] });
+      });
+  }
+
+  render() {
+    return (
+      <Card color={randomColor}>
+        <img src={this.props.cast.image_url} />
+        <Card.Content>
+          <Card.Header content={this.state.user + " Smith"} />
+          <Card.Meta content={this.state.category} />
+          <Card.Description content={this.props.cast.description} />
+        </Card.Content>
+      </Card>
+    );
+  }
+}

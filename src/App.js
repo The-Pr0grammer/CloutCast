@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import CastContainer from "./components/CastContainer";
 import CastForm from "./components/CastForm";
-import Search from "./components/Search";
+import SearchBox from "./components/SearchBox";
 import { Message } from "semantic-ui-react";
 import ScrollToTop from "./components/ScrollToTop.js";
 class App extends Component {
@@ -12,6 +12,7 @@ class App extends Component {
     formToggle: false,
     formSuccess: true,
     successTimer: 0,
+    searchQuery: "",
   };
 
   async componentDidMount() {
@@ -48,14 +49,18 @@ class App extends Component {
     }, 100);
   };
 
+  handleSearch = (newCasts) => {
+    console.log(newCasts)
+    this.setState({ casts: newCasts });
+  };
+
   render() {
-    console.log(this.state.successTimer);
     return (
       <div
         style={{
           background: "black",
           position: "relative",
-          maxWidth: "100vw",
+          minWidth: "100vw",
           height: "300vh",
         }}
       >
@@ -64,7 +69,7 @@ class App extends Component {
           {this.state.successTimer > 0 && (
             <div
               className="ui compact message"
-              style={{ position: "relative", left: "37.8%" }}
+              style={{ position: "relative", left: "35.2%" }}
             >
               <Message
                 visible
@@ -82,7 +87,10 @@ class App extends Component {
             />
           )}
         </div>
-        <Search categories={this.state.categories} />
+        <SearchBox
+          categories={this.state.categories}
+          handleSearch={this.handleSearch}
+        />
         <CastContainer casts={this.state.casts} />
         <ScrollToTop />
       </div>

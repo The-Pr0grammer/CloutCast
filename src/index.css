@@ -8,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
+  position: absolute;
 }
 
 code {
@@ -41,7 +42,7 @@ img {
   display: block;
   position: absolute;
   top: -8px;
-  width: 44.8vw;
+  min-width: 100vw;
   height: 10vh;
   float: left;
 }
@@ -83,25 +84,33 @@ img {
 
 .chosen-cat {
   color: blue;
-  display: block;
   position: relative;
-  height: 20px;
-  width: 24%;
-  font-family: dimensions;
-  font-size: 82px;
-  letter-spacing: 10px;
+  width: 685px;
+  height: 1%;
   text-align: center;
-  left: 37.7%;
+  font-family: "dimensions";
+  font-size: 80px;
+  letter-spacing: 10px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 .search-box {
+  height: 20vh;
   position: relative;
-  left: 72.2%;
+  display: block;
+  left: 27.5%;
   top: 150%;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.ui .results {
+  display: none !important; /*niiiice*/
 }
 
 .upper-site-center {
-  width: 106%;
+  width: 103.7%;
   left: 500%;
 }
 
