@@ -30,10 +30,10 @@ class SearchBox extends Component {
             .includes(this.state.query.toUpperCase())
         );
         this.props.handleSearch(searchCasts);
-      });
-  }
+      });}
 
   render() {
+    console.log(this.state.query)
     return (
       <div style={{ position: "relative", left: "27%", width: "70vh" }}>
         <Container text>

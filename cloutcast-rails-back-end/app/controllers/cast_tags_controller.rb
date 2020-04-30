@@ -1,7 +1,7 @@
 class CastTagsController < ApplicationController
     def create
         CastTag.create(params[:cast_tag_params])
-         render json: @cast_tag
+         render json: @cast_tag 
     end
 
     private
